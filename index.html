@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital clock Using javaScript  </title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="hero">
+        <h1><center>Yeasin's Digital Clock</center>  </h1>
+        <div class="container">
+            <div class="clock">
+                <span id="hrs">00</span>
+                <span>:</span>
+                <span id="min">00</span>
+                <span>:</span>
+                <span id="sec">00</span>
+            </div>
+            
+            
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+        const hrs = document.getElementById("hrs");
+        const min = document.getElementById("min");
+        const sec = document.getElementById("sec");
+
+       function updateClock() {
+        const currentTime =new Date();
+       
+
+ hrs.innerHTML = String(currentTime.getHours()).padStart(2, '0');
+ min.innerHTML = String(currentTime.getMinutes()).padStart(2, '0');
+ sec.innerHTML = String(currentTime.getSeconds()).padStart(2, '0');
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+}
+    </script>
+</body>
+</html>
